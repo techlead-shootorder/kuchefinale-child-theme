@@ -1,4 +1,4 @@
-/---- functions.php ----/
+
 
 
 <?php
@@ -52,4 +52,3 @@ wp_enqueue_style( 'kuchefinale-child-style', get_stylesheet_directory_uri() . '/
 ?>
 
 
-/---- end functions.php ----/
