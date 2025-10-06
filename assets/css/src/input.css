@@ -1,0 +1,121 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Custom Base Styles */
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+  
+  body {
+    @apply font-sans text-gray-900 bg-white;
+  }
+  
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-bold text-gray-900;
+  }
+  
+  h1 {
+    @apply text-4xl lg:text-5xl;
+  }
+  
+  h2 {
+    @apply text-3xl lg:text-4xl;
+  }
+  
+  h3 {
+    @apply text-2xl lg:text-3xl;
+  }
+  
+  h4 {
+    @apply text-xl lg:text-2xl;
+  }
+  
+  a {
+    @apply text-primary-600 hover:text-primary-700 transition-colors duration-200;
+  }
+}
+
+/* Custom Components */
+@layer components {
+  .container {
+    @apply max-w-7xl mx-auto px-4 sm:px-6 lg:px-8;
+  }
+  
+  .btn {
+    @apply inline-flex items-center justify-center px-6 py-3 border border-transparent text-base font-medium rounded-lg shadow-sm transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-offset-2;
+  }
+  
+  .btn-primary {
+    @apply btn bg-primary-600 text-white hover:bg-primary-700 focus:ring-primary-500;
+  }
+  
+  .btn-secondary {
+    @apply btn bg-secondary-600 text-white hover:bg-secondary-700 focus:ring-secondary-500;
+  }
+  
+  .btn-outline {
+    @apply btn border-gray-300 text-gray-700 bg-white hover:bg-gray-50 focus:ring-gray-500;
+  }
+  
+  .card {
+    @apply bg-white rounded-xl shadow-lg overflow-hidden transition-all duration-300 hover:shadow-xl hover:-translate-y-1;
+  }
+  
+  .hero-section {
+    @apply relative bg-gradient-to-br from-primary-600 via-primary-700 to-primary-800 text-white py-20 lg:py-32;
+  }
+  
+  .brand-hero {
+    @apply relative bg-gradient-to-br from-gray-900 via-gray-800 to-gray-900 text-white py-24 lg:py-32;
+  }
+  
+  .section-padding {
+    @apply py-16 lg:py-24;
+  }
+  
+  .text-gradient {
+    @apply bg-gradient-to-r from-primary-600 to-secondary-600 bg-clip-text text-transparent;
+  }
+}
+
+/* Custom Utilities */
+@layer utilities {
+  .text-shadow {
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+  
+  .text-shadow-lg {
+    text-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  }
+  
+  .backdrop-blur-xs {
+    backdrop-filter: blur(2px);
+  }
+}
+
+/* WordPress Editor Styles */
+.wp-block-group {
+  @apply my-8;
+}
+
+.wp-block-columns {
+  @apply grid gap-8;
+}
+
+.wp-block-column {
+  @apply flex-1;
+}
+
+/* Accessibility */
+.screen-reader-text {
+  @apply sr-only;
+}
+
+/* Print Styles */
+@media print {
+  .no-print {
+    @apply hidden;
+  }
+}

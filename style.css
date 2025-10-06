@@ -1,11 +1,9 @@
-
 /*
-Theme Name: Kuchefinale Child
-Theme URI: https://example.com/kuchefinale-child
-Description: Child theme for Kuchefinale. Created by Hareesh Ganta. Version 1.0.0
-Author: Hareesh Ganta
-Author URI: https://example.com/
-Template: kuchefinale
+Theme Name: Kuchefinale Child Theme
+Description: A child theme for Kuchefinale with custom branding and layouts
 Version: 1.0.0
-Text Domain: kuchefinale-child
+Template: parent-theme-folder
 */
+
+/* This file serves as the theme identifier and can import the main stylesheet */
+@import url("assets/css/style.css");

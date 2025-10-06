@@ -1,23 +1,55 @@
-
-
-
 <?php
+/**
+ * Kuchefinale Theme Functions
+ */
 
+// Include theme setup file
+require_once get_stylesheet_directory() . '/inc/theme-setup.php';
 
-add_action( 'wp_enqueue_scripts', 'kuchefinale_child_enqueue_styles' );
-function kuchefinale_child_enqueue_styles() {
-// Enqueue parent theme stylesheet. Use get_template_directory_uri() for parent.
-wp_enqueue_style( 'kuchefinale-parent-style', get_template_directory_uri() . '/style.css' );
+// Include customizer options
+require_once get_stylesheet_directory() . '/inc/customizer.php';
 
+// Theme setup and enqueue scripts are handled in inc/theme-setup.php
 
-// Enqueue child theme stylesheet and make it depend on parent so it loads after.
-wp_enqueue_style( 'kuchefinale-child-style', get_stylesheet_directory_uri() . '/style.css', array( 'kuchefinale-parent-style' ), '1.0.0' );
-
- 
-
+/**
+ * Add custom image sizes
+ */
+function kuchefinale_custom_image_sizes() {
+    add_image_size( 'product-card', 400, 300, true );
+    add_image_size( 'hero-image', 1200, 600, true );
+    add_image_size( 'brand-feature', 800, 500, true );
 }
- 
+add_action( 'after_setup_theme', 'kuchefinale_custom_image_sizes' );
 
+/**
+ * Customize excerpt length
+ */
+function kuchefinale_excerpt_length( $length ) {
+    return 20;
+}
+add_filter( 'excerpt_length', 'kuchefinale_excerpt_length', 999 );
+
+/**
+ * Add custom body classes
+ */
+function kuchefinale_body_classes( $classes ) {
+    if ( is_front_page() ) {
+        $classes[] = 'home-page';
+    }
+    
+    if ( is_page_template( 'page-siemens.php' ) ) {
+        $classes[] = 'brand-page-siemens';
+    }
+    
+    if ( is_page_template( 'page-caesarstone.php' ) ) {
+        $classes[] = 'brand-page-caesarstone';
+    }
+    
+    if ( is_page_template( 'page-schock.php' ) ) {
+        $classes[] = 'brand-page-schock';
+    }
+    
+    return $classes;
+}
+add_filter( 'body_class', 'kuchefinale_body_classes' );
 ?>
-
-
