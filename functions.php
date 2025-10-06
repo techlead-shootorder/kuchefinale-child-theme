@@ -13,10 +13,10 @@ wp_enqueue_style( 'kuchefinale-parent-style', get_template_directory_uri() . '/s
 // Enqueue child theme stylesheet and make it depend on parent so it loads after.
 wp_enqueue_style( 'kuchefinale-child-style', get_stylesheet_directory_uri() . '/style.css', array( 'kuchefinale-parent-style' ), '1.0.0' );
 
-
+ 
 
 }
-
+ 
 
 ?>
 
